@@ -42,11 +42,6 @@ export const Footer = () => {
               Front-End Developer passionate about creating exceptional digital experiences 
               with modern technologies and clean code.
             </p>
-            <div className="flex items-center space-x-1 text-sm text-background/70">
-              <span>Made with</span>
-              <Heart className="h-4 w-4 text-red-400 fill-current" />
-              <span>using React & Tailwind CSS</span>
-            </div>
           </motion.div>
 
           {/* Quick Links */}
@@ -85,7 +80,7 @@ export const Footer = () => {
                   href="mailto:keerthi@gmail.com" 
                   className="text-primary hover:text-primary/80 transition-colors duration-200"
                 >
-                  keerthi@gmail.com
+                  thayammalkeerthana@gmail.com
                 </a>
               </div>
               <div>

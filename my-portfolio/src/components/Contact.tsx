@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Github, Send, MapPin } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -15,6 +16,7 @@ export const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -49,14 +51,14 @@ export const Contact = () => {
       icon: Linkedin,
       label: 'LinkedIn',
       value: 'linkedin.com/in/keerthana',
-      href: 'www.linkedin.com/in/thayammalkeerthana',
+      href: 'https://www.linkedin.com/in/thayammalkeerthana/',
       color: 'text-blue-600'
     },
     {
       icon: Github,
       label: 'GitHub',
       value: 'github.com/keerthana',
-      href: 'https://www.github.com',
+      href: 'https://github.com/thayammalkeerthana',
       color: 'text-gray-600'
     }
   ];
@@ -69,21 +71,58 @@ export const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
+  //   // Simulate form submission
+  //   setTimeout(() => {
+  //     toast({
+  //       title: "Message Sent Successfully!",
+  //       description: "Thank you for reaching out. I'll get back to you soon.",
+  //     });
       
-      setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1500);
-  };
+  //     setFormData({ name: '', email: '', message: '' });
+  //     setIsSubmitting(false);
+  //   }, 1500);
+  // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  if (!formRef.current) return;
+
+  emailjs
+    .sendForm(
+      'service_g98d4gp',      // EmailJS service ID
+      'template_28xe19m',     // EmailJS template ID
+      formRef.current,
+      {
+        publicKey: 'm9PbzTjh9c5GS1lUT', // EmailJS public key
+      }
+    )
+    .then(
+      () => {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(false);
+      },
+      (error) => {
+        toast({
+          title: "Message Failed!",
+          description: "Something went wrong. Please try again later.",
+          variant: "destructive",
+        });
+        console.error('FAILED...', error.text);
+        setIsSubmitting(false);
+      }
+    );
+};
+
 
   return (
     <section id="contact" className="py-20 bg-section-bg">
@@ -189,7 +228,7 @@ export const Contact = () => {
                     Send a Message
                   </h3>
 
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-4" ref={formRef}>
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                         Your Name

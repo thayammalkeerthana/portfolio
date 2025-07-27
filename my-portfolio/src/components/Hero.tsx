@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import keerthanaProfile from '@/assets/keerthana-profile.jpg';
 
@@ -65,7 +65,7 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 1 }}
               className="font-inter text-lg lg:text-xl xl:text-2xl text-white/80 mb-8 max-w-md lg:max-w-lg xl:max-w-xl leading-relaxed"
             >
-              Building responsive and high-performance web apps with React and clean code.
+              Frontend Developer crafting blazing-fast, responsive web apps with React and clean, scalable code.
             </motion.p>
 
             <motion.div
@@ -76,7 +76,7 @@ export const Hero = () => {
             >
               <Button
                 size="lg"
-                className="bg-white text-primary hover:bg-white/90 font-medium px-8"
+                className="bg-white text-primary font-medium px-8"
                 onClick={() => scrollToSection('#contact')}
               >
                 Get In Touch
@@ -85,10 +85,11 @@ export const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-border text-foreground hover:bg-muted font-medium px-8 transition-colors"
+                className="border-border text-foreground font-medium px-8 transition-colors"
+                onClick={()=>window.open('/keerthana_resume.pdf', '_blank')}
               >
-                <Download className="mr-2 h-4 w-4 text-foreground" />
-                Download CV
+                <Eye className="mr-2 h-4 w-4 text-foreground" />
+                Preview CV
               </Button>
             </motion.div>
 
@@ -98,15 +99,21 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 1.4 }}
               className="flex space-x-4"
             >
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10"
+              onClick={() => window.open("https://github.com/thayammalkeerthana", "_blank")}
+              >
                 <Github className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10"
+              onClick={() => window.open("https://www.linkedin.com/in/thayammalkeerthana", "_blank")}
+              >
                 <Linkedin className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                <Mail className="h-5 w-5" />
-              </Button>
+              <a href="mailto:thayammalkeerthana@gmail.com">
+                <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </a>
             </motion.div>
           </motion.div>
 

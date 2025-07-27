@@ -141,18 +141,18 @@ export const Projects = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex space-x-3 pt-4 border-t border-border/50">
-            {project.link && (
+          {/* <div className="flex space-x-3 pt-4 border-t border-border/50"> */}
+            {/* {project.link && (
               <Button variant="outline" size="sm" className="flex-1">
                 <ExternalLink className="h-4 w-4 mr-2" />
                 Live Demo
               </Button>
-            )}
-            <Button variant="outline" size="sm" className="flex-1">
+            )} */}
+            {/* <Button variant="outline" size="sm" className="flex-1">
               <Github className="h-4 w-4 mr-2" />
               View Code
-            </Button>
-          </div>
+            </Button> */}
+          {/* </div> */}
         </CardContent>
       </Card>
     </motion.div>
