@@ -21,7 +21,7 @@ export const Hero = () => {
   <div className="absolute top-40 right-20 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
   <div className="absolute bottom-20 left-20 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
 
-  <div className="relative z-10 container my-10 mx-auto px-4 sm:px-6 lg:px-8 xl:px-20 h-screen flex items-center">
+  <div className="relative z-10 container my-10 md:mt-20 sm:my:15 mx-auto px-4 sm:px-6 lg:px-8 xl:px-20 h-screen flex items-center">
     <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 xl:gap-20 items-center w-full max-w-7xl mx-auto">
       
       {/* Profile Image */}
@@ -90,7 +90,7 @@ export const Hero = () => {
         >
           <Button
             size="lg"
-            className="bg-white text-primary font-medium px-8 w-full sm:w-auto"
+            className="bg-white text-primary font-medium px-8 w-full sm:w-auto hover:text-white"
             onClick={() => scrollToSection('#contact')}
           >
             Get In Touch
