@@ -100,7 +100,7 @@ export const Hero = () => {
             variant="outline"
             size="lg"
             className="border-border text-foreground font-medium px-8 w-full sm:w-auto transition-colors"
-            onClick={() => window.open('/keerthana_resume.pdf', '_blank')}
+            onClick={() => window.open('/Thayammal_Keerthana_Profile.pdf', '_blank')}
           >
             <Eye className="mr-2 h-4 w-4 text-foreground" />
             Preview CV

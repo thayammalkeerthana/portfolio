@@ -20,9 +20,9 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: 'High-Performance Reporting App',
-      description: 'Built a sophisticated reporting application using React and TypeScript. Implemented virtualization techniques to efficiently render nested JSON data and provide seamless export functionality.',
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Node.js'],
+      title: 'Report Management Application',
+      description: 'Built a sophisticated reporting application using Next.js and TypeScript. Implemented virtualization techniques to efficiently render nested JSON data and provide seamless export functionality.',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Node.js'],
       category: 'Professional',
       achievements: [
         'Implemented data virtualization for handling large datasets',
@@ -33,7 +33,7 @@ export const Projects = () => {
     {
       title: 'Conference Management Platform',
       description: 'Developed a comprehensive conference management system handling both academic and enterprise events with integrated e-commerce capabilities.',
-      tech: ['React', 'Redux', 'Ant Design', 'Express.js'],
+      tech: ['React', 'Redux', 'Ant Design'],
       category: 'Professional',
       achievements: [
         'Managed registration for 1000+ attendees',
@@ -42,9 +42,9 @@ export const Projects = () => {
       ]
     },
     {
-      title: 'Weight Loss Community App',
+      title: 'Weight Loss Application',
       description: 'Created a social platform for weight loss community with React Native mobile app and comprehensive admin panel for community management.',
-      tech: ['React', 'React Native', 'Redux Thunk', 'MongoDB'],
+      tech: ['React', 'React Native', 'Redux Thunk'],
       category: 'Professional',
       achievements: [
         'Built cross-platform mobile application',
@@ -53,20 +53,19 @@ export const Projects = () => {
       ]
     },
     {
-      title: 'E2E Testing Automation Suite',
+      title: 'Presentation-Based Product',
       description: 'Designed and implemented comprehensive end-to-end testing framework using TypeScript and Playwright for high reliability across multiple platforms.',
-      tech: ['TypeScript', 'Playwright', 'CI/CD', 'Testing'],
+      tech: ['TypeScript', 'Playwright', 'Testing'],
       category: 'Professional',
       achievements: [
         'Achieved 95% test coverage across platforms',
         'Reduced manual testing time by 70%',
-        'Integrated with CI/CD pipeline for automated testing'
       ]
     },
     {
       title: 'Personal Portfolio Website',
       description: 'Modern, responsive portfolio website built with React and Tailwind CSS featuring dark/light mode, smooth animations, and optimal performance.',
-      tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Responsive Design'],
+      tech: ['React', 'Tailwind CSS', 'Responsive Design'],
       category: 'Personal',
       link: '#',
       achievements: [
